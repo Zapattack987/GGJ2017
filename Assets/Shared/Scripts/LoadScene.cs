@@ -7,6 +7,7 @@ public class LoadScene : MonoBehaviour
     void Start()
     {
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void Update()
