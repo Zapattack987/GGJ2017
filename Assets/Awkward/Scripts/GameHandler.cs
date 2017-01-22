@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class GameHandler : Singleton<GameHandler> {
 
@@ -23,6 +24,7 @@ public class GameHandler : Singleton<GameHandler> {
 
     [Header("UI")]
     public List<Text> InstructionsDisplay;
+    public List<GameObject> InstructionsBackdrops;
     public Text DestinationText;
     public TimerBar TimerBar;
 
@@ -31,6 +33,8 @@ public class GameHandler : Singleton<GameHandler> {
     public TextDisplay notYourFriendDisplay;
     public TextDisplay sadFriendDisplay;
     public TextDisplay goodJobDisplay;
+    public TextDisplay goodJobWaved;
+    public TextDisplay goodJobDidntWave;
 
     public TextDisplay awkward1;
     public TextDisplay awkward2;
@@ -40,6 +44,7 @@ public class GameHandler : Singleton<GameHandler> {
     public TextDisplay winDisplay;
     public TextDisplay loseDisplay;
     public List<Text> endGameText;
+    public List<GameObject> endGameBackdrops;
 
     private bool _inWave = false;
     private bool _lookForWave = false;
@@ -57,6 +62,8 @@ public class GameHandler : Singleton<GameHandler> {
     // ------------------------------------------
     // Use this for initialization
     void Start () {
+
+        Cursor.visible = false;
         _waveTimer = waveTimeRefreshPeriod;
         _activeGoal = Helper.GetItem(goals);
         _activeGoal.Activate();
@@ -91,10 +98,18 @@ public class GameHandler : Singleton<GameHandler> {
         {
             i.enabled = false;
         });
+        InstructionsBackdrops.ForEach(b =>
+        {
+            b.SetActive(false);
+        });
 
         endGameText.ForEach(t =>
         {
             t.enabled = false;
+        });
+        endGameBackdrops.ForEach(b =>
+        {
+            b.SetActive(false);
         });
 	}
 
@@ -103,20 +118,24 @@ public class GameHandler : Singleton<GameHandler> {
     // Update is called once per frame
     void Update () {
 		
+
+        // QUIT THE GAME
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            print("Escape");
+            SceneManager.LoadScene("MainMenu");
         }
+
+        // GAME OVER SCREEN
         if (gameOver)
         {
             _player.Deactivate();
 
             if (Input.GetButtonDown("Jump"))
             {
-                print("Continued");
+                SceneManager.LoadScene("Awkward");
             } else if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Escape))
             {
-                print("Quit");
+                SceneManager.LoadScene("MainMenu");
             }
             return;
         }
@@ -228,12 +247,18 @@ public class GameHandler : Singleton<GameHandler> {
         // Zoom camera in manually on target
         _player.LookAt(_wavingPerson.gameObject, wavingPeopleMinRadius, wavingPeopleRadius);
 
+
         // Display UI controls
         TimerBar.Activate(Player.Instance.reactionTimeLimit);
         InstructionsDisplay.ForEach(i =>
         {
             i.enabled = true;
         });
+        InstructionsBackdrops.ForEach(b =>
+        {
+            b.SetActive(true);
+        });
+
 
         // Go into waiting for input loop
         var haveInput = false;
@@ -269,6 +294,7 @@ public class GameHandler : Singleton<GameHandler> {
         if (playerWaved && haveInput && matchedFriendItems.Count > 0)
         {
             goodJobDisplay.Activate();
+            goodJobWaved.Activate();
         }
         // Bad wave
         else if (playerWaved && haveInput && matchedFriendItems.Count == 0)
@@ -287,7 +313,13 @@ public class GameHandler : Singleton<GameHandler> {
             awkwardCount++;
             awkwardnessUp = true;
         }
-        // Didn't wave
+        // Didn't wave, correctly
+        else if (!playerWaved && haveInput && matchedFriendItems.Count == 0)
+        {
+            goodJobDisplay.Activate();
+            goodJobDidntWave.Activate();
+        }
+        // Didn't decide
         else if (!haveInput)
         {
             staredDisplay.Activate();
@@ -319,6 +351,10 @@ public class GameHandler : Singleton<GameHandler> {
         {
             i.enabled = false;
         });
+        InstructionsBackdrops.ForEach(b =>
+        {
+            b.SetActive(false);
+        });
 
         // Flip over to show other waving person here if necessary
         if (needToShowOtherWave)
@@ -345,6 +381,10 @@ public class GameHandler : Singleton<GameHandler> {
             {
                 t.enabled = true;
             });
+            endGameBackdrops.ForEach(b =>
+            {
+                b.SetActive(true);
+            });
         }
     }
 
@@ -368,6 +408,7 @@ public class GameHandler : Singleton<GameHandler> {
             _activeGoal = Helper.GetItem(goals.Where(g => !g.visited).ToList());
             _activeGoal.Activate();
             DestinationText.text = _activeGoal.goalName;
+            _player.reactionTimeLimit *= 0.87f;
         }
         else
         {
@@ -377,6 +418,10 @@ public class GameHandler : Singleton<GameHandler> {
             endGameText.ForEach(t =>
             {
                 t.enabled = true;
+            });
+            endGameBackdrops.ForEach(b =>
+            {
+                b.SetActive(true);
             });
         }
     }
