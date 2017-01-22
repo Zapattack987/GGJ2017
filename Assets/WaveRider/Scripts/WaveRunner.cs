@@ -20,7 +20,7 @@ public class WaveRunner : MonoBehaviour {
         transform.localScale = transform.localScale + (new Vector3(.003f, .003f, .003f) * scaleRate);
         gameObject.GetComponent<WaveController>().speed += (.001f * scaleRate);
         cam.farClipPlane += (scaleRate);
-        ocean.GetComponent<ObstacleSpawner>().spawnDist += (.015f * scaleRate);
+        ocean.GetComponent<ObstacleSpawner>().spawnDist += (.5f * scaleRate);
         ocean.GetComponent<ObstacleSpawner>().frequency += (.0001f * scaleRate);
         if (gameover)
         {
@@ -34,7 +34,7 @@ public class WaveRunner : MonoBehaviour {
         {
             if (collision.gameObject.tag == "raft")
             {
-                if (collision.gameObject.transform.localScale.x < transform.localScale.x)
+                if (collision.gameObject.transform.localScale.x  < transform.localScale.x)
                 {
                     cam.gameObject.GetComponent<ScoreKeeper>().rafts++;
                     Destroy(collision.gameObject, .5f);
@@ -50,7 +50,7 @@ public class WaveRunner : MonoBehaviour {
             }
             else if (collision.gameObject.tag == "pirate")
             {
-                if (collision.gameObject.transform.localScale.x / 50 < transform.localScale.x)
+                if (collision.gameObject.transform.localScale.x / 800 < transform.localScale.x / 7)
                 {
                     cam.gameObject.GetComponent<ScoreKeeper>().pirateShips++;
                     Destroy(collision.gameObject, .5f);
@@ -66,7 +66,7 @@ public class WaveRunner : MonoBehaviour {
             }
             else if (collision.gameObject.tag == "war")
             {
-                if (collision.gameObject.transform.localScale.x / 40 < transform.localScale.x)
+                if (collision.gameObject.transform.localScale.x / 6400 < transform.localScale.x / 100)
                 {
                     cam.gameObject.GetComponent<ScoreKeeper>().warShips++;
                     Destroy(collision.gameObject, .5f);
@@ -82,7 +82,24 @@ public class WaveRunner : MonoBehaviour {
             }
             if (gameover)
             {
-                GameObject.Find("GameOver").GetComponent<Text>().text = "GAME OVER, MAN!";
+                GameObject.Find("GameOver").GetComponent<Text>().text = "YOU CRASHED! GAME OVER, MAN!";
+            }
+            if (collision.gameObject.tag == "island")
+            {
+                gameover = true;
+                if (collision.gameObject.transform.localScale.x < transform.localScale.x / 2)
+                {
+                    Destroy(collision.gameObject, .1f);
+                    GameObject.Find("GameOver").GetComponent<Text>().text = "WICKED WAVE! PLAY AGAIN TSUN!";
+                    GameObject.Find("GameOver").GetComponent<Text>().color = Color.green;
+                }
+                else
+                {
+                    killer = collision.gameObject;
+                    cam.gameObject.transform.parent = collision.transform;
+                    Destroy(gameObject, .1f);
+                    GameObject.Find("GameOver").GetComponent<Text>().text = "YOU CRASHED! GAME OVER, MAN!";
+                }
             }
         }
     }

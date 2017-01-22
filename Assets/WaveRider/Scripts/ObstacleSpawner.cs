@@ -55,18 +55,21 @@ public class ObstacleSpawner : MonoBehaviour {
                 Vector3 upper = new Vector3(0, 70.2f, 0) * spawning;
                 spawned = Instantiate(boats[2], spawnPoint + upper, Quaternion.Euler(0, 0, 0));
                 spawned.transform.localScale = spawned.transform.localScale * spawning;
+                spawned.GetComponent<ImmaBoat>().spawnDist = spawnDist;
             }
             else if (item > .90)
             {
                 Vector3 upper = new Vector3(0, 3, 0) * spawning;
                 spawned = Instantiate(boats[1], spawnPoint + upper, Quaternion.Euler(0, 0, 0));
                 spawned.transform.localScale = spawned.transform.localScale * spawning;
+                spawned.GetComponent<ImmaBoat>().spawnDist = spawnDist;
             }
             else
             {
                 Vector3 upper = new Vector3(0, 1, 0) * spawning;
                 spawned = Instantiate(boats[0], spawnPoint, Quaternion.Euler(-90, 90, 180));
                 spawned.transform.localScale = new Vector3(1f, 1f, 1f) * spawning;
+                spawned.GetComponent<ImmaBoat>().spawnDist = spawnDist;
             }
             nextSpawnFrame = 60 - (int)(Random.Range(10.0f, 45.0f) * frequency);
             if (nextSpawnFrame <= 0)
