@@ -32,7 +32,7 @@ public class Identifier : MonoBehaviour {
         while (t < 1)
         {
             t += Time.deltaTime;
-            var color = Color.Lerp(Color.Green, _initialColor, t);
+            var color = Color.Lerp(Color.green, _initialColor, t);
             _renderer.material.SetColor("_Color", color);
             yield return null;
         }
