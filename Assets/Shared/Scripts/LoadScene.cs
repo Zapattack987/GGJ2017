@@ -9,6 +9,14 @@ public class LoadScene : MonoBehaviour
         Cursor.visible = true;
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Quit();
+        }
+    }
+
 	public void LoadSceneByIndex(int sceneIndex)
 	{
 		SceneManager.LoadScene(sceneIndex);
