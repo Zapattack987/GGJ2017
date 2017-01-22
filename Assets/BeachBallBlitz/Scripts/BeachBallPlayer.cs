@@ -47,12 +47,12 @@ public class BeachBallPlayer : MonoBehaviour {
 			GameObject waveInstance = new GameObject();
 			if(axis.ToLower() == "x"){
 				if (transform.position.z > 0) {
-					waveInstance = Instantiate (wave, new Vector3 (transform.position.x, 25, transform.position.z - 5),  Quaternion.Euler (0, waveRotation, 180));
+					waveInstance = Instantiate (wave, new Vector3 (transform.position.x+75, 1, transform.position.z - 10),  Quaternion.Euler (0, waveRotation, 180));
 					Rigidbody waveRB = waveInstance.GetComponent<Rigidbody>();
 					waveRB.velocity = new Vector3(0, 0, -wavespeed);
 				} 
 				else {
-					waveInstance = Instantiate (wave, new Vector3 (transform.position.x, 25, transform.position.z + 5),  Quaternion.Euler (0, waveRotation, 180));
+					waveInstance = Instantiate (wave, new Vector3 (transform.position.x-75, 1, transform.position.z + 10),  Quaternion.Euler (0, waveRotation, 180));
 					Rigidbody waveRB = waveInstance.GetComponent<Rigidbody>();
 					waveRB.velocity = new Vector3(0, 0, wavespeed);
 				}
@@ -60,12 +60,12 @@ public class BeachBallPlayer : MonoBehaviour {
 
 			else if(axis.ToLower() =="z"){
 				if (transform.position.x > 0) {
-					waveInstance = Instantiate (wave, new Vector3 (transform.position.x - 5, 25, transform.position.z),  Quaternion.Euler (0, waveRotation, 180));
+					waveInstance = Instantiate (wave, new Vector3 (transform.position.x - 10, 1, transform.position.z-75),  Quaternion.Euler (0, waveRotation, 180));
 					Rigidbody waveRB = waveInstance.GetComponent<Rigidbody>();
 					waveRB.velocity = new Vector3(-wavespeed, 0, 0);
 				} 
 				else {
-					waveInstance = Instantiate (wave, new Vector3 (transform.position.x + 5, 25, transform.position.z),  Quaternion.Euler (0, 0, 180));
+					waveInstance = Instantiate (wave, new Vector3 (transform.position.x + 10, 1, transform.position.z+75),  Quaternion.Euler (0, 0, 180));
 					Rigidbody waveRB = waveInstance.GetComponent<Rigidbody>();
 					waveRB.velocity = new Vector3(wavespeed, 0, 0);
 				}
