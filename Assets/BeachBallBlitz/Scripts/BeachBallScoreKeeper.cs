@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreKeeper : MonoBehaviour {
+public class BeachBallScoreKeeper : MonoBehaviour {
 
 	public int playerNumber;
 	public int startingScore;
