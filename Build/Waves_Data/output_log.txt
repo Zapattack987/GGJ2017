@@ -1,0 +1,286 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1be1)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   21.21.13.7633
+Default GameObject BitMask: UI already registered
+ 
+(Filename:  Line: 100)
+
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\Triangle.dll (this message is harmless)
+Loading C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\Triangle.dll into Unity Child Domain
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\pb_Stl.dll (this message is harmless)
+Loading C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\pb_Stl.dll into Unity Child Domain
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\ProBuilderCore-Unity5.dll (this message is harmless)
+Loading C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\ProBuilderCore-Unity5.dll into Unity Child Domain
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\ProBuilderMeshOps-Unity5.dll (this message is harmless)
+Loading C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\ProBuilderMeshOps-Unity5.dll into Unity Child Domain
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\KDTree.dll (this message is harmless)
+Loading C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\KDTree.dll into Unity Child Domain
+- Completed reload, in  0.282 seconds
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Game Projects\Awkward Shared\Build\Waves_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 75Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.114075 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 474 -> priority: 1 
+  Thread -> id: 8b4 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.214820 ms
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 429.
+Total: 0.309333 ms (FindLiveObjects: 0.052148 ms CreateObjectMapping: 0.013827 ms MarkObjects: 0.233086 ms  DeleteObjects: 0.009876 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.436938 ms
+
+Unloading 48 unused Assets to reduce memory usage. Loaded Objects now: 391.
+Total: 0.734815 ms (FindLiveObjects: 0.033185 ms CreateObjectMapping: 0.032790 ms MarkObjects: 0.291160 ms  DeleteObjects: 0.377679 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.503309 ms
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3490.
+Total: 0.604050 ms (FindLiveObjects: 0.118123 ms CreateObjectMapping: 0.036740 ms MarkObjects: 0.365827 ms  DeleteObjects: 0.083358 ms)
+
+[Singleton] Using instance already created: GameHandler
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Activating zone GoalZone (3)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Activating indicator
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Singleton] Using instance already created: Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting item Black Cowboy Hat (Identifier)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting item Red Glasses (Identifier)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting item Black Mustache (Identifier)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting item Blue Hat (Identifier)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting item Black Hat (Identifier)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.815018 ms
+
+Unloading 157 unused Assets to reduce memory usage. Loaded Objects now: 525.
+Total: 0.761679 ms (FindLiveObjects: 0.065580 ms CreateObjectMapping: 0.024888 ms MarkObjects: 0.271802 ms  DeleteObjects: 0.399407 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.365827 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 719.
+Total: 0.355951 ms (FindLiveObjects: 0.033185 ms CreateObjectMapping: 0.023308 ms MarkObjects: 0.289185 ms  DeleteObjects: 0.010271 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.709531 ms
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.497383 ms (FindLiveObjects: 0.057679 ms CreateObjectMapping: 0.022518 ms MarkObjects: 0.321580 ms  DeleteObjects: 0.095209 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.467753 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.365827 ms (FindLiveObjects: 0.025283 ms CreateObjectMapping: 0.017382 ms MarkObjects: 0.315654 ms  DeleteObjects: 0.007506 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.391111 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.385580 ms (FindLiveObjects: 0.023703 ms CreateObjectMapping: 0.015407 ms MarkObjects: 0.338963 ms  DeleteObjects: 0.007111 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.412049 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.399802 ms (FindLiveObjects: 0.037925 ms CreateObjectMapping: 0.030024 ms MarkObjects: 0.324741 ms  DeleteObjects: 0.006320 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.436543 ms
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3493.
+Total: 0.774321 ms (FindLiveObjects: 0.135506 ms CreateObjectMapping: 0.039111 ms MarkObjects: 0.494222 ms  DeleteObjects: 0.104691 ms)
+
+[Singleton] Using instance already created: GameHandler
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Activating zone GoalZone (3)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Activating indicator
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+[Singleton] Using instance already created: Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting item Brown Mustache (Identifier)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting item Red Baseball Cap (Identifier)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting item Black Headphones (Identifier)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting item Red Headphones (Identifier)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting item Sunglasses (Identifier)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.658573 ms
+
+Unloading 157 unused Assets to reduce memory usage. Loaded Objects now: 527.
+Total: 0.783803 ms (FindLiveObjects: 0.031604 ms CreateObjectMapping: 0.025283 ms MarkObjects: 0.300642 ms  DeleteObjects: 0.425877 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.310123 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 719.
+Total: 0.537679 ms (FindLiveObjects: 0.040691 ms CreateObjectMapping: 0.031209 ms MarkObjects: 0.453136 ms  DeleteObjects: 0.012246 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.506074 ms
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.421926 ms (FindLiveObjects: 0.062419 ms CreateObjectMapping: 0.021333 ms MarkObjects: 0.281679 ms  DeleteObjects: 0.055703 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.370568 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.400988 ms (FindLiveObjects: 0.067555 ms CreateObjectMapping: 0.016987 ms MarkObjects: 0.309333 ms  DeleteObjects: 0.006716 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.434173 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.377679 ms (FindLiveObjects: 0.058864 ms CreateObjectMapping: 0.015802 ms MarkObjects: 0.296296 ms  DeleteObjects: 0.006320 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.435753 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.638815 ms (FindLiveObjects: 0.033975 ms CreateObjectMapping: 0.022123 ms MarkObjects: 0.575605 ms  DeleteObjects: 0.006716 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.361086 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 719.
+Total: 0.373728 ms (FindLiveObjects: 0.056493 ms CreateObjectMapping: 0.022518 ms MarkObjects: 0.284839 ms  DeleteObjects: 0.009481 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.707556 ms
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.432198 ms (FindLiveObjects: 0.030024 ms CreateObjectMapping: 0.035950 ms MarkObjects: 0.304988 ms  DeleteObjects: 0.060444 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.338963 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.411654 ms (FindLiveObjects: 0.081382 ms CreateObjectMapping: 0.015802 ms MarkObjects: 0.306963 ms  DeleteObjects: 0.006716 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.340543 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.548346 ms (FindLiveObjects: 0.057284 ms CreateObjectMapping: 0.015407 ms MarkObjects: 0.453926 ms  DeleteObjects: 0.020938 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.325531 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.323555 ms (FindLiveObjects: 0.020543 ms CreateObjectMapping: 0.014617 ms MarkObjects: 0.282864 ms  DeleteObjects: 0.005530 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.467753 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 719.
+Total: 0.451161 ms (FindLiveObjects: 0.082567 ms CreateObjectMapping: 0.023703 ms MarkObjects: 0.312889 ms  DeleteObjects: 0.031604 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.688593 ms
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.393481 ms (FindLiveObjects: 0.034370 ms CreateObjectMapping: 0.037135 ms MarkObjects: 0.266271 ms  DeleteObjects: 0.055308 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.333827 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.346074 ms (FindLiveObjects: 0.023308 ms CreateObjectMapping: 0.016197 ms MarkObjects: 0.300247 ms  DeleteObjects: 0.005925 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.347259 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.443259 ms (FindLiveObjects: 0.054123 ms CreateObjectMapping: 0.045037 ms MarkObjects: 0.336988 ms  DeleteObjects: 0.006716 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.315654 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.396247 ms (FindLiveObjects: 0.067950 ms CreateObjectMapping: 0.019753 ms MarkObjects: 0.301827 ms  DeleteObjects: 0.006320 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.430222 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 468.
+Total: 0.552692 ms (FindLiveObjects: 0.058074 ms CreateObjectMapping: 0.032000 ms MarkObjects: 0.427457 ms  DeleteObjects: 0.033975 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.369778 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 524.
+Total: 0.401383 ms (FindLiveObjects: 0.051358 ms CreateObjectMapping: 0.032790 ms MarkObjects: 0.309728 ms  DeleteObjects: 0.007506 ms)
+
