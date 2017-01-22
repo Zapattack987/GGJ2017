@@ -42,7 +42,7 @@ public class Player : Singleton<Player> {
 
             if (_lookTimeElapsed < lookAtTargetTime)
             {
-                print(_initialLookRotation.eulerAngles);
+                //print(_initialLookRotation.eulerAngles);
                 _fpsController.SetCamera(Quaternion.Lerp(_initialLookRotation,
                     Quaternion.LookRotation(_lookTarget.position.SetY(0) - transform.position.SetY(0), Vector3.up),
                     _lookTimeElapsed / lookAtTargetTime),
