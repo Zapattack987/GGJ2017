@@ -4,6 +4,20 @@ using System.Collections;
 
 public class LoadScene : MonoBehaviour
 {
+    void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Quit();
+        }
+    }
+
 	public void LoadSceneByIndex(int sceneIndex)
 	{
 		SceneManager.LoadScene(sceneIndex);

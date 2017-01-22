@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BeachBallPlayer : MonoBehaviour {
 
@@ -21,6 +22,11 @@ public class BeachBallPlayer : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
 		if (axis.ToLower() == "x") {
 			
 			if (Input.GetKey ((KeyCode)Enum.Parse (typeof(KeyCode), keyLeftDown)) && transform.position.x > -375) {
