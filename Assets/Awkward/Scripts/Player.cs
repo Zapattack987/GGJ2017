@@ -94,11 +94,13 @@ public class Player : Singleton<Player> {
         _initialCameraTilt = _fpsController.GetCameraRot().eulerAngles.x;
         if (_initialCameraTilt > 180)
         {
-            _initialCameraTilt -= 180;
-        } else if (_initialCameraTilt < -180)
-        {
-            _initialCameraTilt += 180;
+            _initialCameraTilt -= 360;
         }
+        else if (_initialCameraTilt < -180)
+        {
+            _initialCameraTilt += 360;
+        }
+        print("INITIAL CAMERA TILT WAS " + _initialCameraTilt);
         _lookTimeElapsed = 0;
 
         var distance = Vector3.Distance(transform.position, target.transform.position);

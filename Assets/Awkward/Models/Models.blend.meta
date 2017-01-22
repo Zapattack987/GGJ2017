@@ -26,6 +26,8 @@ ModelImporter:
     100036: Bone_R_001
     100038: Bone_R_002
     100040: Bone_R_003
+    100042: Headphones
+    100044: Mustache
     400000: Hat
     400002: //RootNode
     400004: Person
@@ -47,6 +49,8 @@ ModelImporter:
     400036: Bone_R_001
     400038: Bone_R_002
     400040: Bone_R_003
+    400042: Headphones
+    400044: Mustache
     2300000: Hat
     2300002: Person
     2300004: Goal_Arrow
@@ -56,6 +60,8 @@ ModelImporter:
     2300012: Face_Base
     2300014: Sunglasses
     2300016: Glasses
+    2300018: Headphones
+    2300020: Mustache
     3300000: Hat
     3300002: Person
     3300004: Goal_Arrow
@@ -65,6 +71,8 @@ ModelImporter:
     3300012: Face_Base
     3300014: Sunglasses
     3300016: Glasses
+    3300018: Headphones
+    3300020: Mustache
     4300000: Hat
     4300002: Person
     4300004: Goal_Arrow
@@ -74,6 +82,8 @@ ModelImporter:
     4300012: Sunglasses
     4300014: Face_Base
     4300016: Glasses
+    4300018: Headphones
+    4300020: Mustache
     7400000: Default Take
     7400002: ArmatureAction
     7400004: Walk

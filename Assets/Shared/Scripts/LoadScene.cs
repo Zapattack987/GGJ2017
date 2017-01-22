@@ -4,6 +4,11 @@ using System.Collections;
 
 public class LoadScene : MonoBehaviour
 {
+    void Start()
+    {
+        Cursor.visible = true;
+    }
+
 	public void LoadSceneByIndex(int sceneIndex)
 	{
 		SceneManager.LoadScene(sceneIndex);
