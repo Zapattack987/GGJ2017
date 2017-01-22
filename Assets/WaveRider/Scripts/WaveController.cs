@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveController : MonoBehaviour {
     public float speed;
@@ -22,5 +23,9 @@ public class WaveController : MonoBehaviour {
         }
         transform.Rotate(0, y, 0);
         transform.Translate(-speed, 0, 0);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
 	}
 }

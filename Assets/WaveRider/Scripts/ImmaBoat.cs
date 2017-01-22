@@ -6,6 +6,7 @@ public class ImmaBoat : MonoBehaviour {
     GameObject Wave;
     int time;
     int frame;
+    public float spawnDist = 0;
 	// Use this for initialization
 	void Start ()
     {
@@ -19,7 +20,7 @@ public class ImmaBoat : MonoBehaviour {
 		if ( frame == time && Wave != null)
         {
             frame = 0;
-            if (Vector3.Distance(Wave.transform.position, transform.position) >= 1000)
+            if (Vector3.Distance(Wave.transform.position, transform.position) >= spawnDist)
             {
                 Destroy(gameObject);
             }
