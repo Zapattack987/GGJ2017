@@ -41,7 +41,6 @@ public class WaveRunner : MonoBehaviour {
                 }
                 else
                 {
-                    //game over
                     killer = collision.gameObject;
                     cam.gameObject.transform.parent = collision.transform;
                     gameover = true;
@@ -57,7 +56,6 @@ public class WaveRunner : MonoBehaviour {
                 }
                 else
                 {
-                    //game over
                     killer = collision.gameObject;
                     cam.gameObject.transform.parent = collision.transform;
                     gameover = true;
@@ -73,7 +71,6 @@ public class WaveRunner : MonoBehaviour {
                 }
                 else
                 {
-                    //game over
                     killer = collision.gameObject;
                     cam.gameObject.transform.parent = collision.transform;
                     gameover = true;
@@ -83,6 +80,7 @@ public class WaveRunner : MonoBehaviour {
             if (gameover)
             {
                 GameObject.Find("GameOver").GetComponent<Text>().text = "YOU CRASHED! GAME OVER, MAN!";
+                GameObject.Find("Ocean").GetComponent<ObstacleSpawner>().gameover = gameover;
             }
             if (collision.gameObject.tag == "island")
             {
@@ -92,6 +90,7 @@ public class WaveRunner : MonoBehaviour {
                     Destroy(collision.gameObject, .1f);
                     GameObject.Find("GameOver").GetComponent<Text>().text = "WICKED WAVE! PLAY AGAIN TSUN!";
                     GameObject.Find("GameOver").GetComponent<Text>().color = Color.green;
+                    GameObject.Find("Ocean").GetComponent<ObstacleSpawner>().gameover = gameover;
                 }
                 else
                 {
@@ -99,6 +98,7 @@ public class WaveRunner : MonoBehaviour {
                     cam.gameObject.transform.parent = collision.transform;
                     Destroy(gameObject, .1f);
                     GameObject.Find("GameOver").GetComponent<Text>().text = "YOU CRASHED! GAME OVER, MAN!";
+                    GameObject.Find("Ocean").GetComponent<ObstacleSpawner>().gameover = gameover;
                 }
             }
         }

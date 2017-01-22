@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObstacleSpawner : MonoBehaviour {
     int frame;
@@ -12,6 +13,7 @@ public class ObstacleSpawner : MonoBehaviour {
     public float spawnDist;
     // Use this for initialization
     private GameObject Wave;
+    public bool gameover;
     void Start ()
     {
         frame = 0;
@@ -81,6 +83,12 @@ public class ObstacleSpawner : MonoBehaviour {
         else { frame++; }
     }
     void Update () {
-		
-	}
+        if (gameover)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+        }
+    }
 }
