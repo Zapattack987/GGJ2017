@@ -22,10 +22,6 @@ public class BeachBallPlayer : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
 
 		if (axis.ToLower() == "x") {
 			
@@ -83,6 +79,14 @@ public class BeachBallPlayer : MonoBehaviour {
 		}
 
 	}
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+    }
 
 	private IEnumerator disableButton (){
 		enabled = false;
