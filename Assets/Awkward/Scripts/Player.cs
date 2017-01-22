@@ -22,6 +22,8 @@ public class Player : Singleton<Player> {
     private float _initialFOV;
     private float _targetFOV;
 
+    public AudioClip alertSound;
+
     // ------------------------------------------
     // Use this for initialization
     void Start () {
@@ -77,6 +79,11 @@ public class Player : Singleton<Player> {
         {
             reactionTimer = reactionTimeLimit;
             _fpsController.controlsEnabled = false;
+
+            if (alertSound != null)
+            {
+                GetComponent<AudioSource>().PlayOneShot(alertSound);
+            }
         }
         else
         {

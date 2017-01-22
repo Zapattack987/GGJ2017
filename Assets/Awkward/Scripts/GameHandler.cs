@@ -46,6 +46,9 @@ public class GameHandler : Singleton<GameHandler> {
     public List<Text> endGameText;
     public List<GameObject> endGameBackdrops;
 
+    [Header("Sound")]
+    public AudioClip buzzerSound;
+
     private bool _inWave = false;
     private bool _lookForWave = false;
     private Person _wavingPerson;
@@ -330,6 +333,10 @@ public class GameHandler : Singleton<GameHandler> {
 
         if (awkwardnessUp)
         {
+            if (buzzerSound != null)
+            {
+                GetComponent<AudioSource>().PlayOneShot(buzzerSound);
+            }
             if (awkwardCount == 1)
             {
                 awkward1.Activate(true);
