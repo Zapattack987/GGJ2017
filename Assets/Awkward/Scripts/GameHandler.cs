@@ -33,6 +33,8 @@ public class GameHandler : Singleton<GameHandler> {
     public TextDisplay notYourFriendDisplay;
     public TextDisplay sadFriendDisplay;
     public TextDisplay goodJobDisplay;
+    public TextDisplay goodJobWaved;
+    public TextDisplay goodJobDidntWave;
 
     public TextDisplay awkward1;
     public TextDisplay awkward2;
@@ -292,6 +294,7 @@ public class GameHandler : Singleton<GameHandler> {
         if (playerWaved && haveInput && matchedFriendItems.Count > 0)
         {
             goodJobDisplay.Activate();
+            goodJobWaved.Activate();
         }
         // Bad wave
         else if (playerWaved && haveInput && matchedFriendItems.Count == 0)
@@ -314,6 +317,7 @@ public class GameHandler : Singleton<GameHandler> {
         else if (!playerWaved && haveInput && matchedFriendItems.Count == 0)
         {
             goodJobDisplay.Activate();
+            goodJobDidntWave.Activate();
         }
         // Didn't decide
         else if (!haveInput)
@@ -404,7 +408,7 @@ public class GameHandler : Singleton<GameHandler> {
             _activeGoal = Helper.GetItem(goals.Where(g => !g.visited).ToList());
             _activeGoal.Activate();
             DestinationText.text = _activeGoal.goalName;
-            waveTimeRefreshPeriod *= 0.87f;
+            _player.reactionTimeLimit *= 0.87f;
         }
         else
         {
