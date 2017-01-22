@@ -23,7 +23,23 @@ public class GameHandler : Singleton<GameHandler> {
 
     [Header("UI")]
     public List<Text> InstructionsDisplay;
+    public Text DestinationText;
     public TimerBar TimerBar;
+
+    public TextDisplay awkwardDisplay;
+    public TextDisplay staredDisplay;
+    public TextDisplay notYourFriendDisplay;
+    public TextDisplay sadFriendDisplay;
+    public TextDisplay goodJobDisplay;
+
+    public TextDisplay awkward1;
+    public TextDisplay awkward2;
+    public TextDisplay awkward3;
+
+    public Canvas GameCanvas;
+    public TextDisplay winDisplay;
+    public TextDisplay loseDisplay;
+    public List<Text> endGameText;
 
     private bool _inWave = false;
     private bool _lookForWave = false;
@@ -35,6 +51,7 @@ public class GameHandler : Singleton<GameHandler> {
     private Coroutine _wavingCoroutine;
 
     private int awkwardCount = 0;
+    private bool gameOver = false;
 
 
     // ------------------------------------------
@@ -43,6 +60,7 @@ public class GameHandler : Singleton<GameHandler> {
         _waveTimer = waveTimeRefreshPeriod;
         _activeGoal = Helper.GetItem(goals);
         _activeGoal.Activate();
+        DestinationText.text = _activeGoal.goalName;
 
         _player = Player.Instance;
 
@@ -73,6 +91,11 @@ public class GameHandler : Singleton<GameHandler> {
         {
             i.enabled = false;
         });
+
+        endGameText.ForEach(t =>
+        {
+            t.enabled = false;
+        });
 	}
 
 
@@ -80,6 +103,26 @@ public class GameHandler : Singleton<GameHandler> {
     // Update is called once per frame
     void Update () {
 		
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            print("Escape");
+        }
+        if (gameOver)
+        {
+            _player.Deactivate();
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                print("Continued");
+            } else if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Escape))
+            {
+                print("Quit");
+            }
+            return;
+        }
+
+
+
         if (!_inWave)
         {
             _waveTimer -= Time.deltaTime;
@@ -214,33 +257,61 @@ public class GameHandler : Singleton<GameHandler> {
 
         // EVALUATE WAVE
         var matchedFriendItems = GetMatchedItems(_wavingPerson);
+        bool needToShowOtherWave = false;
+        bool awkwardnessUp = false;
 
+        print("Got matched friend items:");
+        foreach (var item in matchedFriendItems)
+        {
+            print(item);
+        }
         // Good wave
         if (playerWaved && haveInput && matchedFriendItems.Count > 0)
         {
-
+            goodJobDisplay.Activate();
         }
         // Bad wave
         else if (playerWaved && haveInput && matchedFriendItems.Count == 0)
         {
+            notYourFriendDisplay.Activate();
+            awkwardDisplay.Activate();
             awkwardCount++;
+            needToShowOtherWave = true;
+            awkwardnessUp = true;
         }
         // Should have waved
         else if (!playerWaved && haveInput && matchedFriendItems.Count > 0)
         {
+            sadFriendDisplay.Activate();
+            awkwardDisplay.Activate();
             awkwardCount++;
+            awkwardnessUp = true;
         }
         // Didn't wave
         else if (!haveInput)
         {
+            staredDisplay.Activate();
+            awkwardDisplay.Activate();
             awkwardCount++;
+            awkwardnessUp = true;
         }
 
-        print(Time.time + ": " + awkwardCount);
-
-
-        // TODO
-        // Flip over to show other waving person here if necessary
+        if (awkwardnessUp)
+        {
+            if (awkwardCount == 1)
+            {
+                awkward1.Activate(true);
+            } else if (awkwardCount == 2)
+            {
+                awkward1.Deactivate();
+                awkward2.Activate(true);
+            } else if (awkwardCount == 3)
+            {
+                awkward2.Deactivate();
+                awkward3.Activate(true);
+            }
+        }
+        print(Time.time + ": Awkwardness: " + awkwardCount);
 
         // Display UI controls
         TimerBar.Deactivate();
@@ -249,12 +320,32 @@ public class GameHandler : Singleton<GameHandler> {
             i.enabled = false;
         });
 
+        // Flip over to show other waving person here if necessary
+        if (needToShowOtherWave)
+        {
+            _player.LookAt(_behindPerson.gameObject, wavingPeopleMinRadius, wavingPeopleRadius);
+            yield return new WaitForSeconds(3);
+        }
+
         print("Exiting wave");
         _wavingPerson.SetInWave(false);
         _behindPerson.SetInWave(false);
         _player.SetInWave(false);
         _waveTimer = waveTimeRefreshPeriod;
         _inWave = false;
+
+        // YOU LOSE
+        if (awkwardCount > 3)
+        {
+            GameCanvas.enabled = false;
+            loseDisplay.Activate();
+            gameOver = true;
+
+            endGameText.ForEach(t =>
+            {
+                t.enabled = true;
+            });
+        }
     }
 
 
@@ -271,16 +362,22 @@ public class GameHandler : Singleton<GameHandler> {
     public void GoalVisited()
     {
         var goalsRemaining = goals.Where(g => !g.visited).Count();
-        print("GOAL VISITED, " + goalsRemaining + " REMAINING");
 
         if (goalsRemaining > 0)
         {
             _activeGoal = Helper.GetItem(goals.Where(g => !g.visited).ToList());
             _activeGoal.Activate();
+            DestinationText.text = _activeGoal.goalName;
         }
         else
         {
-            print("YOU WIN");
+            GameCanvas.enabled = false;
+            winDisplay.Activate();
+            gameOver = true;
+            endGameText.ForEach(t =>
+            {
+                t.enabled = true;
+            });
         }
     }
 
@@ -304,13 +401,13 @@ public class GameHandler : Singleton<GameHandler> {
         var highlightItems = new List<Identifier>();
         foreach (var item in _matchItems)
         {
-            if (person.GetItemsWorn().Select(m => GetInitialName(m.gameObject.name)).ToList().Contains(GetInitialName(item.gameObject.name))) {
+            if (matchItemNames.Contains(GetInitialName(item.gameObject.name))) {
                 highlightItems.Add(item);
             }
         }
         foreach (var item in person.GetItemsWorn())
         {
-            if (_matchItems.Select(m => GetInitialName(m.gameObject.name)).ToList().Contains(GetInitialName(item.gameObject.name)))
+            if (matchItemNames.Contains(GetInitialName(item.gameObject.name)))
             {
                 highlightItems.Add(item);
             }
